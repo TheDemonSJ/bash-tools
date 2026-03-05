@@ -1,9 +1,11 @@
 #!/bin/bash
 
-# Vérification que l'entrée est un entier (Gestion d'erreur)
-if [[ $1 =~ ^[0-9]+$ ]]; then
-    echo "Le carré de $1 est $(( $1 * $1 ))"
+echo "Entrez un nombre :"
+read nombre
+
+if [[ "$nombre" =~ ^-?[0-9]+$ ]]; then
+	carre=$((nombre * nombre))
+	echo "Le carré de $nombre est $carre"
 else
-    echo "Erreur : Veuillez entrer un nombre entier."
-    exit 1
+	echo "Erreur : vous devez entrer un entier."
 fi
